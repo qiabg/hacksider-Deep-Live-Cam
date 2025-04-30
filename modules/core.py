@@ -252,6 +252,8 @@ def run() -> None:
         if not frame_processor.pre_check():
             return
     limit_resources()
+    # Force headless mode to skip GUI initialization
+    modules.globals.headless = True
     if modules.globals.headless:
         start()
     else:
